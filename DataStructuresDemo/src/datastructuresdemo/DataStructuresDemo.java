@@ -22,14 +22,19 @@ public class DataStructuresDemo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-//        LinkedList<Integer> list = new LinkedList<>();
-//        System.out.println(list);
-//        list.add(1);
-//        list.add(10);
-//        list.add(23);
-//        list.add(3);
-//        list.add(2323);
-//        System.out.println(list);
+        LinkedList<Integer> list = new LinkedList<>();
+        System.out.println(list);
+        list.add(1);
+        list.add(10);
+        list.add(23);
+        list.add(3);
+        list.add(2323);
+        System.out.println(list);
+        Iterator<Integer> myIterator;
+        myIterator = list.iterator();
+        while(myIterator.hasNext()){
+            System.out.println(myIterator.next());
+        }
 //        list.remove(2);
 //        list.remove(new Integer(2323));
 //        System.out.println(list);
@@ -46,18 +51,18 @@ public class DataStructuresDemo {
 //        while(listIterator.hasNext()){
 //            System.out.println(listIterator.next());
 
-        Stack<Integer> s = new Stack<>();
-        s.add(2);
-        s.add(12);
-        s.add(12);
-        s.add(2323);
-        s.push(10);
-        s.push(100);
-        s.push(110);
-        System.out.println(s);
-        System.out.println(s.peek());
-        System.out.println(s.pop());
-        System.out.println(s);
+//        Stack<Integer> s = new Stack<>();
+//        s.add(2);
+//        s.add(12);
+//        s.add(12);
+//        s.add(2323);
+//        s.push(10);
+//        s.push(100);
+//        s.push(110);
+//        System.out.println(s);
+//        System.out.println(s.peek());
+//        System.out.println(s.pop());
+//        System.out.println(s);
 //        System.out.println(s.search(110));
 //        System.out.println(s.search(2323));
 //        System.out.println(s.search(12));

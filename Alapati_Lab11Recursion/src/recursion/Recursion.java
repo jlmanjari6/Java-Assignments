@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author S530719
+ * @author Lakshmi Manjari Alapati
  */
 public class Recursion {
 
@@ -20,14 +20,14 @@ public class Recursion {
     String name2;
 
     public int sumOfOdd(int n) {
-
-        int sum = 0;
-
-        for (int i = 0; i <= n; i++) {
-            if (i % 2 == 1) {
-                sum += i;
+        if (n > 0) {
+            if (n == 1) {
+                sum += 1;
+            } else {
+                sum += 2 * n - 1 + sumOfOdd(n - 1);
             }
         }
+
         return sum;
     }
 
@@ -39,8 +39,8 @@ public class Recursion {
 
     public ArrayList<ArrayList<Student>> organizeSeats(ArrayList<Student> studentList, String name1, String name2) {
         finalList = new ArrayList<>();
-        this.name1 = name1;
-        this.name2 = name2;
+        this.name1 = name1.toLowerCase();
+        this.name2 = name2.toLowerCase();
         permute(studentList, 0, studentList.size() - 1);
         return finalList;
     }
@@ -48,21 +48,21 @@ public class Recursion {
     public void permute(ArrayList<Student> str, int s, int r) {
         String currName = "";
         String prevName = "";
-        int checkcount = 0;
+        int count = 0;
 
         if (s == r) {
             ArrayList<Student> temp = new ArrayList<>();
             for (Student x : str) {
                 prevName = currName;
                 currName = x.getFname();
-                if (prevName.equals(name1) && currName.equals(name2)
-                        || prevName.equals(name2) && currName.equals(name1)) {
-                    checkcount++;
+                if (prevName.toLowerCase().equals(name1) && currName.toLowerCase().equals(name2)
+                        || prevName.toLowerCase().equals(name2) && currName.toLowerCase().equals(name1)) {
+                    count++;
                     break;
                 }
                 temp.add(x);
             }
-            if (checkcount == 0) {
+            if (count == 0) {
                 finalList.add(temp);
             }
 
@@ -82,31 +82,31 @@ public class Recursion {
         return a;
     }
 
-    public int evaluateExpression(String exp) {
-        if (exp != null && exp.length() > 0) {
-            int idxC, idxO = -1;
-            idxC = exp.indexOf("");
-            if (idxC != -1) {
-                idxO = exp.lastIndexOf("(", idxC);
+    public int evaluateExpression(String expression) {
+        if (expression != null && expression.length() > 0) {
+            int indexA, indexB = -1;
+            indexA = expression.indexOf(")");
+            if (indexA != -1) {
+                indexB = expression.lastIndexOf("(", indexA);
             }
-            if (idxO != -1 && idxC > idxO) {
-                String subExp = exp.substring(idxO + 1, idxC);
-                exp = exp.replace("(" + subExp + ")", "" + evaluateSimpleExp(subExp));
-                return evaluateExpression(exp);
-            } else if (idxO == -1 && idxC == -1) {
-                return evaluateSimpleExp(exp);
+            if (indexB != -1 && indexA > indexB) {
+                String subExp = expression.substring(indexB + 1, indexA);
+                expression = expression.replace("(" + subExp + ")", "" + parseExpression(subExp));
+                return evaluateExpression(expression);
+            } else if (indexB == -1 && indexA == -1) {
+                return parseExpression(expression);
             }
         }
-        return new Scanner(exp).nextInt();
+        return new Scanner(expression).nextInt();
     }
 
-    private int evaluateSimpleExp(String exp) {
-        if (exp.charAt(0) == '+' || exp.charAt(0) == '-') {
-            exp = "0" + exp;
+    private int parseExpression(String expression) {
+        if (expression.charAt(0) == '+' || expression.charAt(0) == '-') {
+            expression = "0" + expression;
         }
         ArrayList<Integer> operands = new ArrayList<>();
         ArrayList<Character> operators = new ArrayList<>();
-        char ch[] = exp.toCharArray();
+        char ch[] = expression.toCharArray();
         String temp = "";
         for (int i = 0; i < ch.length; i++) {
             if (ch[i] > 47 && ch[i] < 58) {
@@ -116,6 +116,11 @@ public class Recursion {
                 operators.add(ch[i]);
                 operands.add(Integer.parseInt(temp));
                 temp = "";
+                if (ch[i + 1] == '+' || ch[i + 1] == '-') {
+                    temp = ch[++i] + temp;
+                }
+            } else {
+                return Integer.parseInt(expression);
             }
         }
         operands.add(Integer.parseInt(temp));
@@ -137,11 +142,11 @@ public class Recursion {
         }
         for (char op : operations.toCharArray()) {
             while (operators.contains(op)) {
-                int idx = operators.indexOf(op);
-                operands.set(idx, evaluateExp(operators.get(idx),
-                        operands.get(idx), operands.get(idx + 1)));
-                operands.remove(idx + 1);
-                operators.remove(idx);
+                int index = operators.indexOf(op);
+                operands.set(index, calculate(operators.get(index),
+                        operands.get(index), operands.get(index + 1)));
+                operands.remove(index + 1);
+                operators.remove(index);
             }
             if (operators.isEmpty()) {
                 break;
@@ -150,7 +155,7 @@ public class Recursion {
         return operands.get(0);
     }
 
-    private int evaluateExp(char op, int op1, int op2) {
+    private int calculate(char op, int op1, int op2) {
         switch (op) {
             case '*':
                 return op1 * op2;

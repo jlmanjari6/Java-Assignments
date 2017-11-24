@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/ship/Good.java</file>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/ship/Ship.java</file>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/ship/ShipDriver.java</file>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/ship/CargoShip.java</file>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/ship/PassengerShip.java</file>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/util/Utility.java</file>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/enums/Facilities.java</file>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/ship/Cruise.java</file>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/enums/GoodsBaseCost.java</file>
-            <file>file:/C:/Users/S530719/Documents/NetBeansProjects/Alapati_lab07InheritanceAndPolymorphism/src/ship/Point.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
