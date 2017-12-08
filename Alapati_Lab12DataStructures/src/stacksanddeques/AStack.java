@@ -19,7 +19,7 @@ public class AStack<E> {
     }
     
     public void push(E element) {
-        myStack.push(element);
+        myStack.push(element);        
     }
     
     public E pop() {

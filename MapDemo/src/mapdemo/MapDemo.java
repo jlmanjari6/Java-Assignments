@@ -21,37 +21,44 @@ public class MapDemo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-//        TreeMap<String, String> stateMap = new TreeMap<>();
-//        stateMap.put("Missouri", "MO");
-//        stateMap.put("Texas", "TX");
-//        stateMap.put("Illinois", "IL");
-//        stateMap.put("New York", "NY");
-//        stateMap.put("New Jersey", "NJ");
-//        stateMap.put("New York", "NYC");        
-//        
-//        System.out.println(stateMap);
-//        stateMap.remove("Illinois");
-//        stateMap.remove("Illinois");        
-//        
-//        System.out.println(stateMap.entrySet());
-//        System.out.println(stateMap.get("New York"));
-//        System.out.println(stateMap.keySet());
-//        System.out.println(stateMap.values());
-//        
-//        System.out.println(stateMap.containsKey("Illinois"));
-//        System.out.println(stateMap.containsKey("Texas"));
-//        
-//        System.out.println(stateMap.containsValue("TX"));
-//        System.out.println(stateMap.containsKey("IL"));
+        System.out.println("\n\nTree Map");
+        System.out.println("##############");
+        
+        HashMap<String, String> stateMap = new HashMap<>();
+        stateMap.put("Missouri", "MO");
+        stateMap.put("Texas", "TX");
+        stateMap.put("Illinois", "IL");
+        stateMap.put("New York", "NY");
+        stateMap.put("New Jersey", "NJ");
+        stateMap.put("New York", "NYC");
 
+        System.out.println(stateMap);
+        System.out.println("remove: " + stateMap.remove("Illinois"));
+        System.out.println("remove: " + stateMap.remove("Illinois"));
+
+        System.out.println(stateMap.entrySet());
+        System.out.println(stateMap.get("New York"));
+        System.out.println(stateMap.keySet());
+        System.out.println(stateMap.values());
+
+        System.out.println(stateMap.containsKey("Illinois"));
+        System.out.println(stateMap.containsKey("Texas"));
+
+        System.out.println(stateMap.containsValue("TX"));
+        System.out.println(stateMap.containsKey("IL"));
+        
+        System.out.println("\n\nHash Map");
+        System.out.println("##############");
+        
         HashMap<String, ArrayList<String>> movieMap = new HashMap<>();
 
         movieMap.put("Mahesh Babu", new ArrayList<String>() {
             {
-                add("1");
                 add("Khaleja");
             }
         });
+        movieMap.get("Mahesh Babu").add("1");
+        movieMap.put("Mahesh Babu", movieMap.get("Mahesh Babu"));
         movieMap.put("Allu Arjun", new ArrayList<String>() {
             {
                 add("Arya");
@@ -67,7 +74,7 @@ public class MapDemo {
 
         System.out.println(movieMap.entrySet());
         System.out.println(movieMap.get("New York"));
-        System.out.println(movieMap.get("Tarak"));
+        System.out.println(movieMap.get("Mahesh Babu"));
         System.out.println(movieMap.keySet());
         System.out.println(movieMap.values());
     }

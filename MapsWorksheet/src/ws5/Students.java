@@ -27,7 +27,7 @@ public class Students {
     }
 
     public void removeStu(Student stu) {
-        stuMap.remove(stu);
+        stuMap.remove(stu.getStudentId());
     }
 
     public Student getStu(short id) {

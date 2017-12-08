@@ -93,32 +93,60 @@ public class SampleDriver {
 //        System.out.println("fn: " +fn);
 //        System.out.println("mn: " +mn);
 //        System.out.println("ln: " +ln);
-            System.out.println(mystery("Hello"));
-        System.out.println(
-                mystery("Thanks Giving Break is soon!"));
-
+        System.out.println(SumofOdd(8));
+        System.out.println(SumofEven(8));
+        System.out.println(SumofN(8));
     }
 
-        public static String mystery(String str) {
-        if (!str.contains(" ")) {
-            return rw(str);
-        } else {
-            return rw(str.substring(0, str.indexOf(" "))) + " "
-                    + mystery(str.substring(str.indexOf(" ") + 1));
+    public static int SumofOdd(int n) {
+        int s = 0;
+        if (n == 0) {
+            return 0;
         }
-    }
-
-    public static String rw(String str) {
-        String rStr = "";
-        for (int i = str.length() - 1; i >= 0; i--) {
-            rStr += str.charAt(i);
+        if (n == 1) {
+            return 1;
         }
-        return rStr;
+        if (n % 2 == 0) {
+            n = n - 1;
+        }
+        s += n + SumofOdd(n - 2);
+        return s;
     }
 
+    public static int SumofEven(int n) {
+        int s = 0;
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 2) {
+            return 2;
+        }
+        if (n % 2 == 1) {
+            n = n - 1;
+        }
+        s += n + SumofEven(n - 2);
+        return s;
+    }
+
+    public static int SumofN(int n) {
+        int s = 0;
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        s += n + SumofN(n - 1);
+        return s;
+    }
+// if (n > 0) {
+//            if (n == 1) {
+//                sum += 1;
+//            } else {
+//                sum += 2 * n - 1 + sumOfOdd(n - 1);
+//            }
+//        }
+//
+//        return sum;
 
 }
-
-
-
-

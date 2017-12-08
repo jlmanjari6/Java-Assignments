@@ -7,14 +7,7 @@ package ws3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Scanner;
-import jdk.nashorn.internal.parser.Lexer;
+import java.util.*;
 
 /**
  *
