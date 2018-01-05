@@ -29,18 +29,16 @@ public class Employee implements Accountable,Payable{
         return "Employee{" + "empId=" + empId + '}';
     }  
 
-    @Override
-    public double calcSalary() {
-      return 12.2;
-    }
-    
-     @Override
-    public int calcSalary() {
-      return 12;
-    }
+ 
 
     @Override
     public double calcBenefits() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+    @Override
+    public double calcSalary() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

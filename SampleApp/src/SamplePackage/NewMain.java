@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaceDemo;
+package SamplePackage;
 
 /**
  *
- * @author S530719
+ * @author Lakshmi Manjari Alapati
  */
 public class NewMain {
 
@@ -16,14 +16,14 @@ public class NewMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-      Accountable a = new Employee(1);
-      Payable a1 = new Employee(1);
-//        System.out.println(a.calcSalary());
-//System.out.println(a1.calcSalary());
-Employee e = new Employee(10);
-a1 = e;
-e= (Employee)a1;
-        System.out.println(e);
+        double a = 5/2;
+        System.out.println(a); //2.0
+        double b = (double) 5/2;
+        System.out.println(b);//2.5
+        System.out.println(5/2);//2
+        System.out.println(5.0/2);//2.5
+        
+        
     }
     
 }

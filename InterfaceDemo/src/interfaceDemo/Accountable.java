@@ -12,7 +12,7 @@ package interfaceDemo;
 public interface Accountable {
     int BASE_PRICE = 1000;
     
-    int calcSalary();
+//    int calcSalary();
     double calcBenefits();
     
     

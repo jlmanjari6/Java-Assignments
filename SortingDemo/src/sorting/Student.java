@@ -64,11 +64,13 @@ public class Student implements Comparable<Student> {
     public int compareTo(Student o) {
 //        return Integer.compare(this.id, o.id);
 //        return Double.compare(this.gpa, o.gpa);
-Integer i = new Integer(this.id);
-Integer j = new Integer(o.id);
-return i.compareTo(j);
+//Integer i = new Integer(this.id);
+//Integer j = new Integer(o.id);
+//return i.compareTo(j);
 //        return lName.compareTo(o.lName);    
 //        return fName.compareTo(o.fName);
+
+return this.id - o.getId();
     }
 
 }

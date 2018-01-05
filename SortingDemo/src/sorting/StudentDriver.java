@@ -40,25 +40,26 @@ public class StudentDriver {
         for (Student s : studentList) {
             System.out.println(s);
         }
-//
-//        Collections.sort(studentList, new Comparator<Student>() {
-//            @Override
-//            public int compare(Student s1, Student s2) {
-//                if (s1.getlName().compareTo(s2.getlName()) == 0) {
-//                    return s1.getfName().compareTo(s2.getfName());
-//                } else {
-//                    return s1.getlName().compareTo(s2.getlName());
-//                } // end if-else
-//            } // end compareTo
-//
-//        }
-//        );
-//        
-//         System.out.println("ArrayList after sorting in a SORTED order: ");
-//        Collections.sort(studentList);
-//        for (Student s : studentList) {
-//            System.out.println(s);
-//        }
+
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                if (s1.getlName().compareTo(s2.getlName()) == 0) {
+//                    return s1.getfName().compareTo(s2.getfName()); // for strings
+                    return s1.getId() - s2.getId(); //for integers 
+
+                } else {
+                    return s1.getlName().compareTo(s2.getlName());
+                } // end if-else
+            } // end compareTo
+
+        }
+        );
+
+        System.out.println("ArrayList after sorting in a SORTED order: ");
+        for (Student s : studentList) {
+            System.out.println(s);
+        }
 
     }
 

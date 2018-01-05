@@ -18,6 +18,7 @@ public class HourlyEmployee extends Employee {
         super(firstName, lastName, empId, ssn);
         this.hourlyPay = hourlyPay;
         this.noOfHours = noOfHours;
+
     }
 
     public int getNoOfHours() {

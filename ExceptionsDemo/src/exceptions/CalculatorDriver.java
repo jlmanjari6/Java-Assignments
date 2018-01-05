@@ -21,11 +21,13 @@ public class CalculatorDriver {
             System.out.println("Sum: " + cal.add());
             System.out.println("Differece: " + cal.sub());
             System.out.println("Bye!");
-            System.out.println("Product: " + cal.mul());
+            
             System.out.println("Quotient: " + cal.div());
+            System.out.println("Product: " + cal.mul());
             System.out.println("Bye!");
-        }  catch (Exception ex) {
-            System.out.println(ex.getClass()+ ", "+ ex.getMessage());
+        }  catch (DividingByZeroException ex) {
+//            System.out.println(ex.getClass()+ ", "+ ex.getMessage() );
+            System.out.println("Please provide number other than 0!");
         }
 //        catch (DividingByZeroException ex) {
 //            System.out.println(ex.getClass()+ ", "+ ex.getMessage());

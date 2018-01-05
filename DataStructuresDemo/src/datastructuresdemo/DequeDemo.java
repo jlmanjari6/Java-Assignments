@@ -65,6 +65,7 @@ public class DequeDemo {
         deque.removeLast();
         System.out.println("Deque after removing "
                 + "first and last: " + deque);
+        deque.remove();//head
     }
 
 }
